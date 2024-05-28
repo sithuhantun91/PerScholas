@@ -6,7 +6,7 @@ public class ForLoop {
 }
 
 // Program to print a text 5 times
-class loopdemoone {
+class loopDemoOne {
     public static void main(String[] args) {
         int n = 5;
         // for loop
@@ -30,7 +30,7 @@ class MainForLoop {
     }
 }
 
-class palindromeexmaple {
+class palindromeExample {
     public static void main(String[] args) {
         String original, reverse = ""; // Objects of String class
         Scanner in = new Scanner(System.in);

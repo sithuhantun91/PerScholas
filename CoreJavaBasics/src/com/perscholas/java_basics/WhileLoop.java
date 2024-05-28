@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class WhileLoop {
 }
 
-class GuesstheNumber {
+class GuessTheNumber {
     public static void main(String[] args) {
         // Generate a random number to be guessed
         int number = (int) (Math.random() * 101);
@@ -64,7 +64,7 @@ class SubtractionQuizLoop {
     }
 }
 
-class SentinelValuedemo {
+class SentinelValueDemo {
     public static void main(String[] args) {
         // Create a Scanner
         Scanner input = new Scanner(System.in);
