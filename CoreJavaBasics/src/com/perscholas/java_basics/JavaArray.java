@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class JavaArray {
 }
 
-class arrayDemoOne {
+class ArrayDemoOne {
     public static void main(String[] args) {
         // create an array
         int[] age = {12, 4, 5, 2, 5};
@@ -41,7 +41,7 @@ class EnhancedForLoop {
     }
 }
 
-class arraydemothree {
+class ArrayDemoThree {
     public static void main(String[] args) {
         int[] numbers = {2, -9, 0, 5, 12, -25, 22, 9, 8, 12};
         int sum = 0;
@@ -81,7 +81,7 @@ class MeanSDArray {
     }
 }
 
-class insertElements {
+class InsertElements {
     public static void main(String[] args) {
         int i, element;
         int[] arr = new int[11];
