@@ -6,7 +6,7 @@ public class ForLoop {
 }
 
 // Program to print a text 5 times
-class loopDemoOne {
+class LoopDemoOne {
     public static void main(String[] args) {
         int n = 5;
         // for loop
