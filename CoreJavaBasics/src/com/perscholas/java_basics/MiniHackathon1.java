@@ -70,7 +70,7 @@ public class MiniHackathon1 {
             company.setCountry(splitedLine[5]);
             company.setDescription(splitedLine[6]);
             company.setFounded(splitedLine[7]);
-            company.setIndustry(splitedLine[8].toString());
+            company.setIndustry(splitedLine[8]);
             company.setNumberOfEmployees(Integer.parseInt(splitedLine[9]));
             companyList.add(company);
         }
