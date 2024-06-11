@@ -20,24 +20,29 @@ public class MiniHackathon1 {
             location = "./miniHackathon1/SalesReps.csv";
             salesRepList = getSalesRepList(location);
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter Sales Person Last Name to search company data: ");
-            String lastName = sc.nextLine();
-            List<SalesRep> salesReps = new ArrayList<>();
-            salesReps = salesRepList.stream().filter(sr -> sr.getLastName().equals(lastName)).collect(Collectors.toList());
-            System.out.println(salesReps.size() + " SalesRep found");
-            for (SalesRep sr : salesReps) {
-                System.out.println("Name: " + sr.getFirstName() + " " + sr.getLastName());
-                List<Company> companies = new ArrayList<>();
-                companies = companyList.stream().filter(company -> company.getSalesRepId().equals(sr.getUserId())).collect(Collectors.toList());
-                for (Company company : companies) {
-                    System.out.println("Organization Id: " + company.getOrganizationId());
-                    System.out.println("Company Name: " + company.getName());
-                    System.out.println("Country: " + company.getCountry());
-                    System.out.println("Industry: " + company.getIndustry());
-                    System.out.println("Number of Employees: " + company.getNumberOfEmployees());
+            String choice = "";
+            do{
+                System.out.println("Enter Sales Person Last Name to search company data: ");
+                String lastName = sc.nextLine();
+                List<SalesRep> salesReps = new ArrayList<>();
+                salesReps = salesRepList.stream().filter(sr -> sr.getLastName().equals(lastName)).collect(Collectors.toList());
+                System.out.println(salesReps.size() + " SalesRep found");
+                for (SalesRep sr : salesReps) {
+                    System.out.println("Name: " + sr.getFirstName() + " " + sr.getLastName());
+                    List<Company> companies = new ArrayList<>();
+                    companies = companyList.stream().filter(company -> company.getSalesRepId().equals(sr.getUserId())).collect(Collectors.toList());
+                    for (Company company : companies) {
+                        System.out.println("Organization Id: " + company.getOrganizationId());
+                        System.out.println("Company Name: " + company.getName());
+                        System.out.println("Country: " + company.getCountry());
+                        System.out.println("Industry: " + company.getIndustry());
+                        System.out.println("Number of Employees: " + company.getNumberOfEmployees());
+                    }
+                    System.out.println();
                 }
-                System.out.println();
-            }
+                System.out.println("Do you want to continue? (Y/N)");
+                choice = sc.nextLine().toLowerCase();
+            }while(choice.equals("yes") || choice.equals("y"));
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
             e.printStackTrace();
