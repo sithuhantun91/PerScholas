@@ -8,25 +8,32 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class MiniHackathon1 {
-    //private static final String REGEX = ",";
     //Regex to ignore comma inside double quotes
     private static final String REGEX = ",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)";
     public static void main(String[] args) {
         List<Company> companyList = new ArrayList<>();
         List<SalesRep> salesRepList = new ArrayList<>();
+        String choice = "";
         try {
+            //Read data from csv files
             String location = "./miniHackathon1/Company.csv";
             companyList = getCompanyList(location);
             location = "./miniHackathon1/SalesReps.csv";
             salesRepList = getSalesRepList(location);
+
+            //find Sales Person by last name
             Scanner sc = new Scanner(System.in);
-            String choice = "";
-            do{
-                System.out.println("Enter Sales Person Last Name to search company data: ");
+            do {
+                //get Sales Person's Last name from user input
+                System.out.println("Enter Sales Person's Last name to search company data: ");
                 String lastName = sc.nextLine();
+
+                //find Sales Person
                 List<SalesRep> salesReps = new ArrayList<>();
                 salesReps = salesRepList.stream().filter(sr -> sr.getLastName().equals(lastName)).collect(Collectors.toList());
                 System.out.println(salesReps.size() + " SalesRep found");
+
+                //find associated companies for each sales person
                 for (SalesRep sr : salesReps) {
                     System.out.println("Name: " + sr.getFirstName() + " " + sr.getLastName());
                     List<Company> companies = new ArrayList<>();
@@ -40,9 +47,11 @@ public class MiniHackathon1 {
                     }
                     System.out.println();
                 }
+
+                //Ask user want to continue search again or not
                 System.out.println("Do you want to continue? (Y/N)");
                 choice = sc.nextLine().toLowerCase();
-            }while(choice.equals("yes") || choice.equals("y"));
+            } while (choice.equals("yes") || choice.equals("y"));
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
             e.printStackTrace();
@@ -52,11 +61,11 @@ public class MiniHackathon1 {
         }
     }
 
+    //Read data from Company.csv file
     private static List<Company> getCompanyList(String filePath) throws Exception {
         List<Company> companyList = new ArrayList<>();
         File file = new File(filePath);
         Scanner input = new Scanner(file);
-        ArrayList<String[]> data = new ArrayList<String[]>();
         input.nextLine();
         while (input.hasNextLine()) {
             String Line = input.nextLine();
@@ -77,11 +86,11 @@ public class MiniHackathon1 {
         return companyList;
     }
 
-    private static List<SalesRep> getSalesRepList(String filePath) throws FileNotFoundException {
+    //Read data from SalesReps.csv file
+    private static List<SalesRep> getSalesRepList(String filePath) throws Exception {
         List<SalesRep> salesRepList = new ArrayList<>();
         File file = new File(filePath);
         Scanner input = new Scanner(file);
-        ArrayList<String[]> data = new ArrayList<>();
         input.nextLine();
         while (input.hasNextLine()) {
             String Line = input.nextLine();
