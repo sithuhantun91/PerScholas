@@ -32,6 +32,7 @@ public class MiniHackathon1 {
                 List<SalesRep> salesReps = new ArrayList<>();
                 salesReps = salesRepList.stream().filter(sr -> sr.getLastName().equals(lastName)).collect(Collectors.toList());
                 System.out.println(salesReps.size() + " SalesRep found");
+                System.out.println();
 
                 //find associated companies for each sales person
                 for (SalesRep sr : salesReps) {
@@ -51,6 +52,7 @@ public class MiniHackathon1 {
                 //Ask user want to continue search again or not
                 System.out.println("Do you want to continue? (Y/N)");
                 choice = sc.nextLine().toLowerCase();
+                System.out.println();
             } while (choice.equals("yes") || choice.equals("y"));
         } catch (FileNotFoundException e) {
             System.out.println("File not found!");
