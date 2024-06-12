@@ -26,11 +26,13 @@ public class MiniHackathon1 {
             do {
                 //get Sales Person's Last name from user input
                 System.out.println("Enter Sales Person's Last name to search company data: ");
-                String lastName = sc.nextLine();
+                String lastName = sc.nextLine().toLowerCase();
 
                 //find Sales Person
                 List<SalesRep> salesReps = new ArrayList<>();
-                salesReps = salesRepList.stream().filter(sr -> sr.getLastName().equals(lastName)).collect(Collectors.toList());
+                salesReps = salesRepList.stream()
+                        .filter(sr -> sr.getLastName().toLowerCase().equals(lastName))
+                        .collect(Collectors.toList());
                 System.out.println(salesReps.size() + " SalesRep found");
                 System.out.println();
 
@@ -38,7 +40,9 @@ public class MiniHackathon1 {
                 for (SalesRep sr : salesReps) {
                     System.out.println("Name: " + sr.getFirstName() + " " + sr.getLastName());
                     List<Company> companies = new ArrayList<>();
-                    companies = companyList.stream().filter(company -> company.getSalesRepId().equals(sr.getUserId())).collect(Collectors.toList());
+                    companies = companyList.stream()
+                            .filter(company -> company.getSalesRepId().equals(sr.getUserId()))
+                            .collect(Collectors.toList());
                     for (Company company : companies) {
                         System.out.println("Organization Id: " + company.getOrganizationId());
                         System.out.println("Company Name: " + company.getName());
