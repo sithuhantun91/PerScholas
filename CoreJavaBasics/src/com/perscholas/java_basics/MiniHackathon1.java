@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class MiniHackathon1 {
     //Regex to ignore comma inside double quotes
-    private static final String REGEX = ",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)";
+    private static final String REGEX = ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)";
     public static void main(String[] args) {
         List<Company> companyList = new ArrayList<>();
         List<SalesRep> salesRepList = new ArrayList<>();
@@ -44,11 +44,7 @@ public class MiniHackathon1 {
                             .filter(company -> company.getSalesRepId().equals(sr.getUserId()))
                             .collect(Collectors.toList());
                     for (Company company : companies) {
-                        System.out.println("Organization Id: " + company.getOrganizationId());
-                        System.out.println("Company Name: " + company.getName());
-                        System.out.println("Country: " + company.getCountry());
-                        System.out.println("Industry: " + company.getIndustry());
-                        System.out.println("Number of Employees: " + company.getNumberOfEmployees());
+                        System.out.println(company.toString());
                     }
                     System.out.println();
                 }
@@ -125,6 +121,15 @@ class Company {
     private String founded;
     private String industry;
     private int numberOfEmployees;
+
+    @Override
+    public String toString() {
+        return "Organization Id: " + this.organizationId
+                + "\nCompany Name: " + this.name
+                + "\nCountry: " + this.country
+                + "\nIndustry: " + this.industry
+                + "\nNumber of Employees: " + this.numberOfEmployees;
+    }
 
     public int getIndex() {
         return index;
