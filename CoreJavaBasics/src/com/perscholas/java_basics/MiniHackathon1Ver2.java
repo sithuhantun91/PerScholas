@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class MiniHackathon1 {
+public class MiniHackathon1Ver2 {
     //Regex to ignore comma inside double quotes
     private static final String REGEX = ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)";
     public static void main(String[] args) {
