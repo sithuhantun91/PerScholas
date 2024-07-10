@@ -34,5 +34,11 @@ public class Update_preparedSt_Example{
         {
             e.printStackTrace();
         }
+        try {
+            prepStmt.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
