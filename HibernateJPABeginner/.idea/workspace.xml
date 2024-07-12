@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9bab113-8171-4f6c-b21b-698ec9415f48" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/controller/UserController.java" afterDir="false" />
-    </list>
+    <list default="true" id="f9bab113-8171-4f6c-b21b-698ec9415f48" name="Changes" comment="commit GLAB 305.4.2B" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,11 +75,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720799529464</updated>
-      <workItem from="1720799530705" duration="4212000" />
+      <workItem from="1720799530705" duration="4782000" />
     </task>
+    <task id="LOCAL-00001" summary="commit GLAB 305.4.2B">
+      <option name="closed" value="true" />
+      <created>1720807387895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720807387895</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit GLAB 305.4.2B" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit GLAB 305.4.2B" />
   </component>
 </project>
