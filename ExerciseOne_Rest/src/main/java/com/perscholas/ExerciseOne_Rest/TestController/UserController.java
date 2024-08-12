@@ -21,7 +21,7 @@ public class UserController {
     * @return list of countries
     */
     @ModelAttribute("countries")
-    public List < String > getUserCountries() {
+    public List<String> getUserCountries() {
         List < String > countries = new ArrayList< >();
         countries.add("UK");
         countries.add("USA");
