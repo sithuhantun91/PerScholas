@@ -50,12 +50,12 @@ public class UserController {
     * The following handler method will retrieve the 'countries' *
     *attribute from the model
     */
-    @GetMapping("/Home")
+    @GetMapping("/home")
     public String home(@ModelAttribute("countries") List<String> countries
             ,Model model) {
         //Adding more countries
         countries.add("Australia");
         countries.add("Canada");
-        return "Home";
+        return "home";
     }
 }
